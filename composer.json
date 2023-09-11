@@ -1,0 +1,27 @@
+{
+    "name": "vokke/aussiefarm",
+    "description": "A Vokke package built in Laravel.",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "Vokke\\AussieFarm\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Jan Michael Quisto",
+            "email": "mic.quisto@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vokke\\AussieFarm\\Providers\\AppServiceProvider",
+                "Vokke\\AussieFarm\\Providers\\ConfigServiceProvider",
+                "Vokke\\AussieFarm\\Providers\\MiddlewareServiceProvider",
+                "Vokke\\AussieFarm\\Providers\\RouteServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
