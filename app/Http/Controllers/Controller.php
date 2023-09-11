@@ -1,6 +1,6 @@
 <?php
 
-namespace Vokke\AussieFarm\Controllers;
+namespace App\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -12,7 +12,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-use Vokke\AussieFarm\Models\Kangaroo\Tracker;
+use App\Models\Kangaroo\Tracker;
 
 class Controller extends BaseController
 {

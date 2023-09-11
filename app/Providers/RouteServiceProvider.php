@@ -1,10 +1,10 @@
 <?php
 
-namespace Vokke\AussieFarm\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
-use Vokke\AussieFarm\Helpers\Data as Helper;
+use App\Helpers\Data as Helper;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -38,7 +38,7 @@ class RouteServiceProvider extends ServiceProvider
         }
         else {
 
-            if (file_exists($path = Helper::getWorkingPath($this) . DIRECTORY_SEPARATOR . 'routes')) {
+            if (file_exists($path = RouteServiceProvider . phpHelper::getWorkingPath($this) . DIRECTORY_SEPARATOR . 'routes')) {
 
                 foreach (scandir($path) as $route) {
 

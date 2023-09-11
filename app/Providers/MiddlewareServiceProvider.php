@@ -1,10 +1,10 @@
 <?php
 
-namespace Vokke\AussieFarm\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
-use Vokke\AussieFarm\Helpers\Data as Helper;
+use App\Helpers\Data as Helper;
 
 class MiddlewareServiceProvider extends ServiceProvider
 {

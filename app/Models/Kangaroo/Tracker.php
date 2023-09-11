@@ -1,7 +1,7 @@
 <?php
-namespace Vokke\AussieFarm\Models\Kangaroo;
+namespace App\Models\Kangaroo;
 
-use Vokke\AussieFarm\Models\SqlModel;
+use App\Models\SqlModel;
 
 class Tracker extends SqlModel
 {
