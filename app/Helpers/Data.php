@@ -3,7 +3,7 @@
  * Data Helper
  */
 
-namespace Vokke\AussieFarm\Helpers;
+namespace App\Helpers;
 class Data {
 
     /**
@@ -30,11 +30,11 @@ class Data {
         $path = (new \ReflectionClass(get_class($object)))->getFileName();
         $path = str_replace('vendor', 'workbench', $path);
 
-        $localWorkbenchFolder = base_path() . DIRECTORY_SEPARATOR . 'workbench';
+        $localWorkbenchFolder = Data . phpbase_path() . DIRECTORY_SEPARATOR . 'workbench';
 
         $isWorkbench = is_dir($localWorkbenchFolder) && file_exists($path);
 
-        $path = base_path() . DIRECTORY_SEPARATOR . ($isWorkbench ? 'workbench' : 'vendor') . DIRECTORY_SEPARATOR . 'vokke'. DIRECTORY_SEPARATOR . self::getPackageName();
+        $path = Data . phpbase_path() . DIRECTORY_SEPARATOR . ($isWorkbench ? 'workbench' : 'vendor') . DIRECTORY_SEPARATOR . 'vokke'. DIRECTORY_SEPARATOR . self::getPackageName();
 
         return $path;
     }
@@ -47,7 +47,7 @@ class Data {
      */
     public static function getTemplatePath($dir, $filename) {
 
-        $path = app_path() . DIRECTORY_SEPARATOR . 'Template' .  DIRECTORY_SEPARATOR . strtolower($dir) . DIRECTORY_SEPARATOR . self::getPackageName();
+        $path = Data . phpapp_path() . DIRECTORY_SEPARATOR . 'Template' .  DIRECTORY_SEPARATOR . strtolower($dir) . DIRECTORY_SEPARATOR . self::getPackageName();
         $filepath = $path . DIRECTORY_SEPARATOR . $filename;
 
         return (file_exists($filepath)) ? $path : null;

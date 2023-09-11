@@ -4,7 +4,7 @@
     "type": "package",
     "autoload": {
         "psr-4": {
-            "Vokke\\AussieFarm\\": ""
+            "App\\": "app/"
         }
     },
     "authors": [
@@ -16,10 +16,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Vokke\\AussieFarm\\Providers\\AppServiceProvider",
-                "Vokke\\AussieFarm\\Providers\\ConfigServiceProvider",
-                "Vokke\\AussieFarm\\Providers\\MiddlewareServiceProvider",
-                "Vokke\\AussieFarm\\Providers\\RouteServiceProvider"
+                "App\\Providers\\AppServiceProvider",
+                "App\\Providers\\ConfigServiceProvider",
+                "App\\Providers\\MiddlewareServiceProvider",
+                "App\\Providers\\RouteServiceProvider"
             ]
         }
     },

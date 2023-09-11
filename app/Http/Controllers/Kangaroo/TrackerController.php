@@ -1,7 +1,7 @@
 <?php
-namespace Vokke\AussieFarm\Controllers\Kangaroo;
+namespace App\Http\Controllers\Kangaroo;
 
-use Vokke\AussieFarm\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 

@@ -11,4 +11,4 @@
         </div>
     </div>
 </div>
-{{$x[0]}}
+{{ route('trackerProcess) }}

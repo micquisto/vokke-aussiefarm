@@ -1,9 +1,9 @@
 <?php
 
-namespace Vokke\AussieFarm\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Vokke\AussieFarm\Helpers\Data as Helper;
+use App\Helpers\Data as Helper;
 
 class ConfigServiceProvider extends ServiceProvider
 {
@@ -24,7 +24,7 @@ class ConfigServiceProvider extends ServiceProvider
     private function loadConfigs() {
 
         $packageName = Helper::getPackageName();
-        $workingPath = Helper::getWorkingPath($this) . DIRECTORY_SEPARATOR . 'config';
+        $workingPath = ConfigServiceProvider . phpHelper::getWorkingPath($this) . DIRECTORY_SEPARATOR . 'config';
 
         foreach (scandir($workingPath) as $config) {
 
