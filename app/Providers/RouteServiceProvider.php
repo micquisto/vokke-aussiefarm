@@ -1,0 +1,59 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Router;
+use App\Helpers\Data as Helper;
+
+class RouteServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot(Router $router)
+    {
+        // Boots package after everything booted
+        $this->app->booted(function() use ($router) {
+
+            $this->loadRoutes($router);
+        });
+    }
+
+    /**
+     * Loads routes
+     * @param Illuminate\Routing\Router $router
+     * @return void
+     */
+    private function loadRoutes(Router $router) {
+
+        if ($this->app->routesAreCached()) {
+
+            $this->app->booted(function() {
+
+                require $this->app->getCachedRoutesPath();
+            });
+        }
+        else {
+
+            if (file_exists($path = RouteServiceProvider . phpHelper::getWorkingPath($this) . DIRECTORY_SEPARATOR . 'routes')) {
+
+                foreach (scandir($path) as $route) {
+
+                    if (pathinfo($route, PATHINFO_EXTENSION) == 'php') {
+
+                        $this->loadRoutesFrom($path . DIRECTORY_SEPARATOR . $route);
+                    }
+                }
+            }
+
+            $this->app->booted(function() use ($router) {
+
+                $router->getRoutes()->refreshNameLookups();
+                $router->getRoutes()->refreshActionLookups();
+            });
+        }
+    }
+}

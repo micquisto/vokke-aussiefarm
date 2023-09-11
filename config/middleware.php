@@ -6,6 +6,6 @@
 
 return [
     'route' => [
-         'vokke-middleware' => \Vokke\AussieFarm\Middleware\VokkeMiddleware::class,
+         'vokke-middleware' => \App\Middleware\VokkeMiddleware::class,
     ],
 ];
